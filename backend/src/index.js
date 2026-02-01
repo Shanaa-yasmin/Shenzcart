@@ -34,3 +34,10 @@ app.use('/api/orders', ordersRouter);
 app.listen(PORT, () => {
   console.log(`Backend listening on http://localhost:${PORT}`);
 });
+
+// Add this to allow Vercel domain
+const allowedOrigins = [
+  'http://localhost:5173',
+  'http://localhost:3000',
+  process.env.FRONTEND_URL // Vercel URL will be set here
+];
